@@ -1,17 +1,19 @@
 <mat-expansion-panel>
     <mat-expansion-panel-header>
         <mat-panel-title>
-            ID: {{story.id}}
+            <p *ngIf="story.title != undefined && story.type == 'story'">
+                <a target="_blank" href="{{story.url}}">{{story.title}}</a>
+            </p>
+            <p *ngIf="story.title != undefined && story.type != 'story'">
+                {{story.title}}
+            </p>
         </mat-panel-title>
     </mat-expansion-panel-header>
     <p><b>Author:</b> {{story.by}}</p>
-    <p><b>Time:</b> {{story.time}}</p>
+    <p><b>Date:</b> {{date}}</p>
     <p><b>Type:</b> {{story.type}}</p>
-    <p>
-        <b>Title: </b><a *ngIf="story.title != undefined" target="_blank" href="{{story.url}}">{{story.title}}</a>
-    </p>
     <p *ngIf="story.score != undefined"><b>Score:</b> {{story.score}}</p>
-    <p *ngIf="story.kids != undefined"><b>Kids:</b> {{story.kids}}</p>
+    <p *ngIf="story.kids != undefined"><b>Comments:</b> {{story.kids.length}}</p>
     <p *ngIf="story.text != undefined"><b>Text:</b> {{story.text}}</p>
     <p *ngIf="story.parent != undefined"><b>Parent:</b> {{story.parent}}</p>
     <p *ngIf="story.descendants != undefined"><b>Descendants:</b> {{story.descendants}}</p>

@@ -6,12 +6,16 @@ import { Story } from '../Story/story';
   templateUrl: './storyitem.component.html',
   styleUrls: ['./storyitem.component.css']
 })
-export class StoryitemComponent implements OnInit {
+export class StoryitemComponent implements OnInit {  
+
+  date: Date;  
 
   @Input() story: Story;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.date = new Date(this.story.time)
   }
 
 }
