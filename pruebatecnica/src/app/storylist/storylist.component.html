@@ -1,0 +1,12 @@
+<div>
+    <app-storyitem *ngFor="let story of storiesObj" [story]="story"></app-storyitem>
+</div>
+<div class="background">
+    <mat-paginator
+        [length]="storiesID.length"
+        [pageSize]="page_size"
+        [pageSizeOptions]="page_size_options"
+        (page)="onPageChange($event)"
+        aria-label="Select page"
+    ></mat-paginator>
+</div>

@@ -1,0 +1,21 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            ID: {{story.id}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p><b>Author:</b> {{story.by}}</p>
+    <p><b>Time:</b> {{story.time}}</p>
+    <p><b>Type:</b> {{story.type}}</p>
+    <p>
+        <b>Title: </b><a *ngIf="story.title != undefined" target="_blank" href="{{story.url}}">{{story.title}}</a>
+    </p>
+    <p *ngIf="story.score != undefined"><b>Score:</b> {{story.score}}</p>
+    <p *ngIf="story.kids != undefined"><b>Kids:</b> {{story.kids}}</p>
+    <p *ngIf="story.text != undefined"><b>Text:</b> {{story.text}}</p>
+    <p *ngIf="story.parent != undefined"><b>Parent:</b> {{story.parent}}</p>
+    <p *ngIf="story.descendants != undefined"><b>Descendants:</b> {{story.descendants}}</p>
+    <p *ngIf="story.parts != undefined"><b>Parts:</b> {{story.parts}}</p>
+    <p *ngIf="story.poll != undefined"><b>Poll:</b> {{story.poll}}</p>
+
+</mat-expansion-panel>
